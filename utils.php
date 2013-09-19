@@ -35,3 +35,9 @@ if (!function_exists('compose_url')) {
 		return "$scheme$user$pass$host$port$path$query$fragment";
 	}
 }
+
+if (!function_exists('safe_urlencode')) {
+	function safe_urlencode($url) {
+		return urlencode(urldecode($url));
+	}
+}
